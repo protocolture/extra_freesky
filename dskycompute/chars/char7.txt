@@ -1,0 +1,28 @@
+Name: Bernth Castro
+Class: Teamster
+Corp Sponsor: Omni Consumer Products
+---------------
+Strength: 43
+Speed: 33
+Intellect: 35
+Combat: 38
+---------------
+Sanity: 30
+Fear: 35
+Body: 30
+Armor: 35
+---------------
+Skill Profile: Asteroid Miner
+Zero-G: 5%. 
+Mechanical Repair 5%. 
+Piloting 5%. 
+Geology: 5%. 
+Asteroid Mining: 10%. 
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Once per session, you may reroll a roll on the panic table.
+Bonus XP: Gain 1XP whenever you first set foot on an undiscovered planet.
+Trinket: Stylized Cigarette Case
+Patch: "All Out of Fucks To Give" (Astronaut with Turned Out Pockets)
+Most recent nightmare:
+There's a pulse grenade in your hands. You can't remember how to throw, your fingers are useless. Everyone is disappointed.

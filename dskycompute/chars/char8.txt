@@ -1,0 +1,27 @@
+Name: Selden West
+Class: Scientist
+Sponsor: Genom Corporation
+---------------
+Strength: 12
+Speed: 23
+Intellect: 40
+Combat: 25
+---------------
+Sanity: 40
+Fear: 25
+Body: 25
+Armor: 30
+---------------
+Skill Profile: Biologist
+Biology: 5%. 
+Chemistry: 5%. 
+Genetics: 
+First Aid: 5%. 
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Whenever you fail a sanity check, each nearby friendly player gains 1 stress.
+Bonus XP: Gain 1XP whenever you bring a piece of alien technology, or living organism, aboard the ship for study.
+Trinket: Stress Ball reads: Zero Stress in Zero G
+Patch: Pin-Up Girl (Succubus)
+Most recent nightmare:
+Every door is labeled exit despite taking you back to the start of the corridor. You have been here before.

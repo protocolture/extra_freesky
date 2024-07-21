@@ -1,0 +1,13 @@
+SCK	MISO	MOSI	NSS	SCL	SDA	RX	TX
+ON	ON	ON	ON	OFF	OFF	OFF	OFF
+
+PN532 NFC HAT	Raspberry Pi (BCM)
+SCK	SCK
+MISO	MISO
+MOSI	MOSI
+NSS	P4 (D4)
+
+RPi.GPIO 
+
+sudo apt-get install python3-pip
+sudo pip3 install RPi.GPIO

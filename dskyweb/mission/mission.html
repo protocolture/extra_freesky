@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Selector</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="script.js" defer></script>
+	<link href="https://cdn.jsdelivr.net/gh/nostalgic-css/NES.css/css/nes.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<div id="missionText" class="box">
+    <h2>Mission Briefing</h2>
+    <div class="video-container">
+        <video width="100%" height="100%" autoplay loop muted class="video-border">
+            <source src="map.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+		
+    </div>
+	<div id="acceptMission" class="square">
+        <h2>Accept Mission</h2>
+    </div>
+
+</div>
+
+
+
+
+
+
+    <div id="selection1" class="container hidden">
+        <div class="square" data-choice="Military Assault">
+            <h2>Military Assault</h2>
+        </div>
+        <div class="square" data-choice="Civilian Recovery">
+            <h2>Civilian Recovery</h2>
+        </div>
+    </div>
+
+    <div id="selection2" class="container hidden">
+        <div class="square" data-choice="Extra Armor">
+            <h2>Extra Armor</h2>
+        </div>
+        <div class="square" data-choice="Auto Medkit">
+            <h2>Auto Medkit</h2>
+        </div>
+    </div>
+
+    <div id="selection3" class="container hidden">
+        <div class="square" data-choice="Auto Rifle">
+            <h2>Auto Rifle</h2>
+        </div>
+        <div class="square" data-choice="High Explosive Charge">
+            <h2>High Explosive Charge</h2>
+        </div>
+    </div>
+
+    <div id="selection4" class="container hidden">
+        <div class="square" data-choice="Scientific Mandate">
+            <h2>Scientific Mandate</h2>
+        </div>
+        <div class="square" data-choice="Mechanical Assistance">
+            <h2>Mechanical Assistance</h2>
+        </div>
+    </div>
+
+    <div id="teamSelection" class="container hidden">
+        <!-- Example of 10 repeated characters -->
+        <div class="char">
+            <img src="path_to_image" alt="Char 1">
+            <h2>Char 1</h2>
+            <p>Class: Soldier</p>
+            <p>Specialty: Sniper</p>
+        </div>
+        <!-- Repeat the above block for 10 characters, changing data as required -->
+
+    </div>
+
+    <div class="selected-option hidden">
+        <h2>Selected Options:</h2>
+        <p id="option1"></p>
+        <p id="option2"></p>
+        <p id="option3"></p>
+        <p id="option4"></p>
+    </div>
+</body>
+</html>

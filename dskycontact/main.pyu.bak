@@ -1,0 +1,45 @@
+import RPi.GPIO as GPIO
+import subprocess
+
+from pn532 import *
+
+def execute_script(hex_value):
+    """Executes the Python script corresponding to the hex value."""
+    script_name = f"{hex_value}.py"
+    try:
+        subprocess.run(["python3", script_name])
+    except Exception as e:
+        print(f"Failed to execute {script_name}. Error: {e}")
+
+if __name__ == '__main__':
+    try:
+        pn532 = PN532_SPI(debug=False, reset=20, cs=4)
+        #pn532 = PN532_I2C(debug=False, reset=20, req=16)
+        #pn532 = PN532_UART(debug=False, reset=20)
+
+        ic, ver, rev, support = pn532.get_firmware_version()
+        print('Found PN532 with firmware version: {0}.{1}'.format(ver, rev))
+
+        # Configure PN532 to communicate with MiFare cards
+        pn532.SAM_configuration()
+
+        print('Waiting for RFID/NFC card...')
+        while True:
+            # Check if a card is available to read
+            uid = pn532.read_passive_target(timeout=0.5)
+            print('.', end="")
+            
+            # Try again if no card is available.
+            if uid is None:
+                continue
+            
+            print('Found card with UID:', [hex(i) for i in uid])
+            
+            # Check hex(1) and execute the script if it matches the criteria
+            if hex(uid[0]) == "0xf7":
+                execute_script("f7")
+
+    except Exception as e:
+        print(e)
+    finally:
+        GPIO.cleanup()

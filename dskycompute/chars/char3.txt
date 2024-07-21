@@ -1,0 +1,26 @@
+Name: Gambio Bergdorf
+Class: Marine
+Sponsor: Aesir Corporation
+---------------
+Strength: 28
+Speed: 33
+Intellect: 22
+Combat: 26 (+5 when a friendly marine is nearby)
+---------------
+Sanity: 25
+Fear: 30
+Body: 35
+Armor: 40
+---------------
+Skill Profile: Gunner
+Military Training: 5%. 
+Gunnery: 10%. 
+Mechanical Repair: 5%. 
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Whenever you panic, every nearby friendly player must make a fear save.
+Bonus XP: Gain 1 xp for killing an enemy.
+Trinket: Bartender's Certification (Expired)
+Patch: "I Am Not A Robot"
+Most recent nightmare:
+Children with sunken eyes and rotted teeth chant, "SACRIFICE, SACRIFICE". They push you, you fall. Their faces fade in the distance. You keep falling.

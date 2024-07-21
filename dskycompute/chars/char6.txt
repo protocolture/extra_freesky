@@ -1,0 +1,28 @@
+Name: Roy Carver
+Class: Teamster
+Sponsor: Aesir Corporation
+---------------
+Strength: 33
+Speed: 13
+Intellect: 25
+Combat: 22
+---------------
+Sanity: 30
+Fear: 35
+Body: 30
+Armor: 35
+---------------
+Skill Profile: Vehicle Engineer
+Zero-G: 5%.
+Mechanical Repair 5%. 
+Heavy Machinery: 
+Engineering: 10%. 
+Vehicle Specialization: 10%. Forklift
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Once per session, you may reroll a roll on the panic table.
+Bonus XP: Gain 1XP whenever you first set foot on an undiscovered planet.
+Trinket: Pair of Shot Glasses, Spent Shotgun Shells
+Patch: Security Guard patch
+Most recent nightmare:
+You are digging up a skeleton, the bones are impossibly fine, elegant even. The face long and gaunt, mournful. The wings so wide they consume the sky.

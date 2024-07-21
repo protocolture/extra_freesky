@@ -1,0 +1,60 @@
+EPISODE 6: REVENGE OF THE DOCUMENTATION
+
+Stupid developer has returned to
+his home planet of dumb home automation in
+an attempt to integrate RPG
+games with HA tools.
+
+Little does Luke know that the
+GALACTIC EMPIRE has secretly
+made HA tools really fucking hard 
+and technology selection has become
+more crucial than ever
+
+When completed, this ultimate
+weapon will spell certain doom
+for the small band of rebels
+struggling to restore freedom
+to the galaxy...
+
+Prerequisites. 
+
+I have been hesitant to bother with prereqs before because the scope has been small enough that I could recall it all from memory. 
+
+This is no longer the case. So for my benefit I will keep this section hopefully up to date. 
+
+The project has scope creeped into amazing new areas. 
+
+Each area will get its own subsection. 
+
+1. Voice Assistant.
+
+The goal here is to liberate the whole "Computer as an NPC" thing from the clutches of mechanical interaction. 
+
+SO far this looks like:
+
+Raspi 4
+Home Automation (The tool, not the concept)
+HAC - Enables extra functionality in HA 
+https://github.com/jekalmin/extended_openai_conversation - Enables custom tinkering with HAC voice assistant. Allows OpenAI to interact with HA features. 
+
+Home Automation can be installed directly from RasPi imager. 
+
+HAC was a bitch to install so I will outline my method in detail. 
+
+Install ADVANCED TERMINAL AND SSH addon in HA. I couldnt get the builtin one to work. 
+
+To do this first, click on your user profile in HA, scroll down and enable Advanced Mode. 
+
+Once you have that, install the Addon, navigate to the config window and set a username and password for SSH. 
+
+Also make sure there are no restrictions on the Addon. 
+
+You may need to reboot here. 
+
+wget -O - https://get.hacs.xyz | bash -
+
+Then
+
+sudo reboot 
+

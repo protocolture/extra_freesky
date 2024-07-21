@@ -1,0 +1,137 @@
+import time
+import redis
+from tqdm import tqdm
+
+# Redis connection
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+# Status indicators
+status_indicators = {
+    'Reactor': ['ON', 'COLD', 'SCRAM'],
+    'Life Support': ['ON', 'OFF', 'FAULT'],
+    'Air Pressure': ['ON', 'OFF', 'FAULT'],
+    'Comms': ['ON', 'OFF', 'FAULT'],
+    'Defensive Systems': ['ON', 'OFF', 'FAULT'],
+    'Food Water and Waste': ['ON', 'OFF', 'FAULT'],
+    'Maglev': ['ON', 'OFF', 'FAULT'],
+    'Access Control': ['ON', 'OFF', 'FAULT'],
+    'Containment': ['ON', 'OFF', 'FAULT'],
+    'System Booted': ['YES', 'NO']
+}
+
+# Reset Redis with initial statuses
+for status, states in status_indicators.items():
+    r.set(status, states[1])  # sets all statuses to their 'OFF' equivalent
+
+# Set initial power level
+r.set('Power', '0')
+
+# Create Program base class
+class Program:
+    def __init__(self, code, name, next_programs, req_status):
+        self.code = code
+        self.name = name
+        self.next_programs = next_programs
+        self.req_status = req_status
+
+    def run(self):
+        # Display current status and power
+        print("Current Status:")
+        for status, _ in status_indicators.items():
+            print(f"{status}: {r.get(status).decode('utf-8')}")
+        print(f"Power: {r.get('Power').decode('utf-8')}%")
+
+        # Check that all required statuses are met
+        for status, req in self.req_status.items():
+            if r.get(status) != req:
+                print(f"Error: {status} is not {req}")
+                return '1000'
+        
+        return input("Enter next program code: ")
+
+# Create specific program classes
+class Program1000(Program):
+    def run(self):
+        super().run()
+        print("System is in ERROR state")
+        return input("Enter next program code: ")
+
+class Program1001(Program):
+    def run(self):
+        # Check that all required statuses are met
+        for status, req in self.req_status.items():
+            if r.get(status) != req:
+                print(f"Error: {status} is not {req}")
+                return '1000'
+
+        print("System booting up...")
+        for i in tqdm(range(100)):
+            time.sleep(0.01)  # sleep for a short time to simulate progress
+        r.set('System Booted', 'YES')
+        print("Boot successful.")
+        return input("Enter next program code: ")
+
+class ReactorStartup(Program):
+    def __init__(self):
+        super().__init__('1101', 'Reactor Startup', ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1000'], {}, "Starting up reactor...")
+
+    def run(self):
+        reactor_status = self.redis.get('Reactor').decode('utf-8')
+        if reactor_status == 'COLD':
+            print("Reactor is heating up. Please wait...")
+            for i in range(120):
+                time.sleep(1)
+                print("█", end="")
+            print("\nReactor has been heated and is now ON.")
+            self.redis.set('Reactor', 'ON')
+            self.redis.set('Power', 100)
+        elif reactor_status == 'SCRAM':
+            # Check all systems are OFF
+            if all([self.redis.get(status) == b'OFF' for status in self.statuses.keys() if status != 'Reactor']):
+                print("All systems are OFF. Reactor can be restarted.")
+                print("Starting up reactor...")
+                for i in range(120):
+                    time.sleep(1)
+                    print("█", end="")
+                print("\nReactor has been restarted from SCRAM state.")
+                self.redis.set('Reactor', 'ON')
+                self.redis.set('Power', 100)
+            else:
+                print("All systems need to be OFF to restart from SCRAM state.")
+        else:
+            print("Reactor Startup cannot proceed as the reactor is not in a COLD or SCRAM state.")
+        next_program = self.get_next_program_code()
+        return next_program
+
+
+
+
+# Create Program objects
+programs = {
+    '1000': Program1000('1000', 'ERROR', ['1001', '1101'], {}),
+    '1001': Program1001('1001', 'BOOT', ['1000'], {'Power': '20', 'System Booted': 'NO'}),
+    '1101': Program1101('1101', 'Reactor Startup', ['1000', '1001'], {'Power': '80', 'System Booted': 'YES'}),
+}
+
+# Start with ERROR state
+current_program = '1000'
+
+# Main loop
+while True:
+    try:
+        # Update power status
+        if r.get('Reactor') == b'ON' and all(r.get(status) == b'OFF' for status in status_indicators.keys() if status != 'Reactor'):
+            r.set('Power', '80')
+        else:
+            r.set('Power', str(int(r.get('Power')) - 10 * sum(r.get(status) == b'ON' for status in status_indicators.keys() if status != 'Reactor')))
+
+        # Run current program and get next program
+        next_program = programs[current_program].run()
+        while next_program not in programs[current_program].next_programs:
+            print("Invalid program. Please enter a valid next program code.")
+            next_program = input("Enter next program code: ")
+
+        current_program = next_program
+    except KeyboardInterrupt:
+        break
+

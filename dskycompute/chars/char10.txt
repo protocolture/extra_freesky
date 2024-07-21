@@ -1,0 +1,27 @@
+Name: Scott Farmer
+Class: Scientist
+---------------
+Strength: 8
+Speed: 29
+Intellect: 40
+Combat: 24
+---------------
+Sanity: 40
+Fear: 25
+Body: 25
+Armor: 30
+---------------
+Skill Profile: Archaeologist
+Biology: 5%. 
+Archaeology: 5%. 
+Theology: 5%. 
+Art: 5%. 
+Linguistics: 5%. 
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Whenever you fail a sanity check, each nearby friendly player gains 1 stress.
+Bonus XP: Gain 1XP whenever you bring a piece of alien technology, or living organism, aboard the ship for study.
+Trinket: Pair of Shot Glasses, Spent Shotgun Shells
+Patch: Blood Type (Reference Patch)
+Most recent nightmare:
+You are digging up a skeleton, the bones are impossibly fine, elegant even. The face long and gaunt, mournful. The wings so wide they consume the sky.

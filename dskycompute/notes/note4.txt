@@ -1,0 +1,17 @@
+Physics Lab Manifest - Items near end of life.
+
+-------------
+
+-Hexafluorosilicic Acid: Quantity – 3L. Note: Ensure double-gloved handling. Reacts aggressively with organic matter.
+---
+-Spectral Analyser Kit: Last calibration – Two weeks ago. Note: Irregular readings on Martian samples. Need further investigation.
+---
+-Cobalt-60: Quantity – 15g. Note: Secure in lead container. Radiation levels unstable. Do not use without supervision.
+---
+-Microscopic Scalpel Set: Note: Blades appearing dull, despite no use? Possible corrosion from Martian atmosphere.
+---
+-Dichloromethane: Quantity – 5L. Note: Vapors seem denser than usual. Ensure full-face respirator use.
+---
+-Thermal Imaging Camera: Note: Picking up fluctuating cold spots in Lab B. Check calibration.
+---
+-Triphosphorus Decasulfide: Quantity – 500g. Note: Store away from light. Odd luminescent properties observed in dark conditions.

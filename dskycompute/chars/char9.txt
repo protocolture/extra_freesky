@@ -1,0 +1,26 @@
+Name: Marcia Harlan
+Class: Marine
+Sponsor: Suzhou-Synta
+---------------
+Strength: 26
+Speed: 13
+Intellect: 36
+Combat: 39 (+5 when a friendly marine is nearby)
+---------------
+Sanity: 25
+Fear: 30
+Body: 35
+Armor: 40
+---------------
+Skill Profile: Chaplain
+Military Training: 5%. 
+Theology: 5%. 
+Mysticism: 10%. 
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Whenever you panic, every nearby friendly player must make a fear save.
+Bonus XP: Gain 1 xp for killing an enemy.
+Trinket: Fuzzy Handcuffs
+Patch: "Smooth Operator"
+Most recent nightmare:
+A weathered hag sits on your chest, her mouth a hideous O of accusations. It won't stop dripping pale fluids on your face.

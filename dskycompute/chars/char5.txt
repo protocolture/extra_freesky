@@ -1,0 +1,29 @@
+Name: Med Kimata
+Class: Teamster
+Sponsor: Genom Corporation
+---------------
+Strength: 23
+Speed: 32
+Intellect: 16
+Combat: 28
+---------------
+Sanity: 30
+Fear: 35
+Body: 30
+Armor: 35
+---------------
+Skill Profile: Junker
+Zero-G 5%
+Mechanical Repair 5%.
+Heavy Machinery: 
+Scavenging: 5%. 
+Jury-Rigging: 10%.
+1 SP banked
+---------------
+Other Features
+When dealing with fear, panic, or insanity: Once per session, you may reroll a roll on the panic table.
+Bonus XP: Gain 1XP whenever you first set foot on an undiscovered planet.
+Trinket: Pair of Shot Glasses, Spent Shotgun Shells
+Patch: Security Guard patch
+Most recent nightmare:
+You are digging up a skeleton, the bones are impossibly fine, elegant even. The face long and gaunt, mournful. The wings so wide they consume the sky.

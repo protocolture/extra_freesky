@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+    <link href="https://unpkg.com/nes.css/css/nes.min.css" rel="stylesheet" />
+    <style>
+        /* You can add additional custom styles here if needed */
+    </style>
+</head>
+<body>
+
+<section class="nes-container with-title is-centered">
+    <h2 class="title">Control Dashboard</h2>
+
+    <!-- Status Section -->
+    <section class="item">
+        <p class="nes-text is-primary">Status (Refresh to update):</p>
+        <p>RED: <span id="red-value">--</span></p>
+        <p>BLUE: <span id="blue-value">--</span></p>
+        <p>YELLOW: <span id="yellow-value">--</span></p>
+        <p>GOSMOKE: <span id="gosmoke-value">--</span></p>
+        <p>Smoke Seconds: <span id="smokeseconds-value">--</span></p>
+    </section>
+
+    <!-- Set Values Section -->
+    <section class="item">
+        <h3 class="nes-text is-primary">Set Values:</h3>
+        <!-- RED -->
+        <form method="POST" action="http://192.168.20.71:7379/SET/RED">
+            <label for="red_value" class="nes-label">RED Value</label>
+            <input type="text" id="red_value" class="nes-input" name="value" required />
+            <button type="submit" class="nes-btn is-primary">Set RED</button>
+        </form>
+
+        <!-- BLUE -->
+        <form method="POST" action="http://192.168.20.71:7379/SET/BLUE">
+            <label for="blue_value" class="nes-label">BLUE Value</label>
+            <input type="text" id="blue_value" class="nes-input" name="value" required />
+            <button type="submit" class="nes-btn is-primary">Set BLUE</button>
+        </form>
+
+        <!-- YELLOW -->
+        <form method="POST" action="http://192.168.20.71:7379/SET/YELLOW">
+            <label for="yellow_value" class="nes-label">YELLOW Value</label>
+            <input type="text" id="yellow_value" class="nes-input" name="value" required />
+            <button type="submit" class="nes-btn is-primary">Set YELLOW</button>
+        </form>
+
+        <!-- GOSMOKE -->
+        <form method="POST" action="http://192.168.20.71:7379/SET/GOSMOKE">
+            <label for="gosmoke_value" class="nes-label">GOSMOKE Value</label>
+            <input type="text" id="gosmoke_value" class="nes-input" name="value" required />
+            <button type="submit" class="nes-btn is-primary">Set GOSMOKE</button>
+        </form>
+
+        <!-- smokeseconds -->
+        <form method="POST" action="http://192.168.20.71:7379/SET/smokeseconds">
+            <label for="smokeseconds_value" class="nes-label">Smoke Seconds</label>
+            <input type="text" id="smokeseconds_value" class="nes-input" name="value" required />
+            <button type="submit" class="nes-btn is-primary">Set Smoke Seconds</button>
+        </form>
+    </section>
+
+    <!-- Journals Section -->
+    <section class="item">
+        <h3 class="nes-text is-primary">Journals:</h3>
+        <!-- Loop for journals -->
+        <?php for($i = 1; $i <= 16; $i++): ?>
+        <form method="POST" action="http://192.168.20.71:7379/SET/journal<?php echo $i; ?>">
+            <input type="hidden" name="value" value="1">
+            <button type="submit" class="nes-btn is-primary">Set Journal <?php echo $i; ?></button>
+        </form>
+        <?php endfor; ?>
+    </section>
+
+    <!-- TWILIGHT Section -->
+    <section class="item">
+        <h3 class="nes-text is-primary">Miscellaneous:</h3>
+                <form method="POST" action="http://192.168.20.71:7379/SET/TWILIGHT">
+            <label for="twilight_value" class="nes-label">TWILIGHT Value</label>
+            <input type="text" id="twilight_value" class="nes-input" name="value" required />
+            <button type="submit" class="nes-btn is-primary">Set TWILIGHT</button>
+        </form>
+    </section>
+
+</section>
+
+<script>
+    // If needed, add JavaScript to interact with the server here.
+</script>
+
+</body>
+</html>
+

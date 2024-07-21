@@ -1,0 +1,7 @@
+Nothing less than a total overhaul from https://github.com/protocolture/jupiter-forethought
+
+Terminal interface? BAH. Too user friendly. 
+
+Automation via mains? BAH. lets get dirty with relays and NFC. 
+
+Theres not a lot of difference between the target featureset of this program and an escape room. 
