@@ -1,0 +1,25 @@
+Brief Overview of Hardware Requirements.
+
+Sundries:
+Flash Drives
+Speaker Cable
+SD Cards
+
+
+Relay System
+1. RasPi4
+2. Raspberry Pi 8-ch Relay Expansion Board (https://www.waveshare.com/rpi-relay-board-b.htm)
+
+Relay Board used to integrate ordinary electrical items into the system
+
+RFID System
+1. RasPi4 
+2. NFC HAT for Raspberry Pi (PN532) (https://core-electronics.com.au/nfc-hat-for-raspberry-pi-pn532.html)
+
+Used to scan for RFID tags etc. 
+
+Home Assistant
+1. RasPi4
+
+Database Server
+1. Anything that can run Debian decently quick. I am using a Lenovo Tiny Form PC. 
