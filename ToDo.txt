@@ -1,0 +1,14 @@
+1. Confirm whether HA can replace Redis
+2. Confirm whether dskyweb is on the roadmap this year
+3. Confirm whether dskypanel is on the roadmap this year
+3a. Confirm whether HA can be used to replace a panel with hex lights or similar
+4. Integrate the heavier python workloads with HA (Whether or not this needs Redis not sure yet)
+5. See if alternative RFID readers will simplify workflow with HA
+5a. If not, update dsky contact to speak to HA. 
+6. Replace dskyconsole with a watchdog script on HA. 
+7. Integrate dskycompute with the above. 
+8. Ideally dskybrain can be replaced by HA entirely. 
+8a. Find a HA compliant method of audio playback
+8b. Find a HA compliant method of audio detection 
+9. Integrate all of the above with HA Voice Assistant
+10. Actually wrap a game around this. 
