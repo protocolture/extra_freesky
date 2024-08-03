@@ -1,8 +1,8 @@
-1. Confirm whether HA can replace Redis
-2. Confirm whether dskyweb is on the roadmap this year
+1. Confirm whether HA can replace Redis - Done, it can kinda.
+2. Confirm whether dskyweb is on the roadmap this year - Still not sure. Might be close to a breakthrough
 3. Confirm whether dskypanel is on the roadmap this year
-3a. Confirm whether HA can be used to replace a panel with hex lights or similar
-4. Integrate the heavier python workloads with HA (Whether or not this needs Redis not sure yet)
+3a. Confirm whether HA can be used to replace a panel with hex lights or similar - Ongoing
+4. Integrate the heavier python workloads with HA - Webhook currently working for the smoke machine. 
 5. See if alternative RFID readers will simplify workflow with HA
 5a. If not, update dsky contact to speak to HA. 
 6. Replace dskyconsole with a watchdog script on HA. 
