@@ -20,6 +20,8 @@ git clone $repo_url $clone_dir
 
 chmod +x $launch_script_path
 
+
+
 # Erroor Checking
 if [ $? -ne 0 ]; then
     echo "Error: Failed to clone repository. Please check the URL and your network connection. Exiting."
@@ -32,20 +34,20 @@ echo "1) Relay"
 echo "2) Reader"
 echo "3) Printer"
 echo "4) Audio"
-read -p "Enter the number corresponding to your choice: " choice
+read -p "Enter Mode: " choice
 
 case $choice in
     1)
-        env_var_value="DRelay"
+        FREESKY_MODE="DRelay"
         ;;
     2)
-        env_var_value="DReader"
+        FREESKY_MODE="DReader"
         ;;
     3)
-        env_var_value="DPrinter"
+        FREESKY_MODE="DPrinter"
         ;;
     4)
-        env_var_value="DAudio"
+        FREESKY_MODE="DAudio"
         ;;
     *)
         echo "Invalid option. Exiting."
@@ -53,10 +55,25 @@ case $choice in
         ;;
 esac
 
-echo "Setting environment variable EXTRA_FREESKY to $env_var_value"
-echo "export EXTRA_FREESKY=\"$env_var_value\"" >> ~/.bashrc
-echo "export EXTRA_FREESKY_PATH=\"$clone_dir\"" >> ~/.bashrc
-source ~/.bashrc
+# Ensure /etc/dsky directory exists
+if [ ! -d /etc/dsky ]; then
+    mkdir -p /etc/dsky
+    echo "Created /etc/dsky directory."
+fi
+
+# Create the /etc/dsky/dsky.conf configuration file with the selected mode
+sudo bash -c 'cat <<EOF > /etc/dsky/dsky.conf
+# /etc/dsky/dsky.conf
+# Configuration for Freesky
+
+# Mode for Freesky: Selected during installation
+FREESKY_MODE=$FREESKY_MODE
+
+# Directory for Freesky
+FREESKY_DIR=/opt/dsky/freesky
+EOF'
+
+echo "Configuration file /etc/dsky/dsky.conf created with mode $FREESKY_MODE."
 
 # Step 3: Set the launch script to run at startup
 echo "Setting up launch script to run at startup..."
@@ -68,7 +85,6 @@ Description=Launch Freesky
 
 [Service]
 ExecStart='$launch_script_path'
-Environment="EXTRA_FREESKY='$env_var_value'"
 StandardOutput=journal
 StandardError=journal
 Restart=always
