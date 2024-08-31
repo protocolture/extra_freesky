@@ -1,14 +1,23 @@
 #!/bin/bash
-# Step 1: Pull the latest code from the GitHub repository
 echo "Pulling the latest code from the GitHub repository..."
 git -C /opt/dsky pull
+CONFIG_FILE="/etc/dsky/dsky.conf"
 
-# Step 2: Launch a script based on the environment variable
-echo "Launching Freesky..."
+#!/bin/bash
+
+# Load configuration from /etc/dsky/dsky.conf
+
+if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+    echo "Configuration loaded from $CONFIG_FILE"
+else
+    echo "Configuration file $CONFIG_FILE not found. Exiting."
+    exit 1
+fi
 
 # Map environment variables to specific scripts
-echo $EXTRA_FREESKY
-case $EXTRA_FREESKY in
+echo $FREESKY_MODE
+case $FREESKY_MODE in
     DRelay)
         script_to_run="/opt/dsky/dskyrelay/free-sky-relay-loop.py"
         ;;
@@ -22,7 +31,7 @@ case $EXTRA_FREESKY in
         script_to_run="/opt/dsky//dskybrain/brain.py"
         ;;
     *)
-        echo "Unsupported mode: $EXTRA_FREESKY. Exiting."
+        echo "Unsupported mode, Exiting"
         exit 1
         ;;
 esac
