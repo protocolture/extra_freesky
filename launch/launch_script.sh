@@ -2,14 +2,19 @@
 echo "Pulling the latest code from the GitHub repository..."
 git -C /opt/dsky pull
 CONFIG_FILE="/etc/dsky/dsky.conf"
+LOG_FILE="/var/log/dsky_launch.log"
 
 #!/bin/bash
 
-# Load configuration from /etc/dsky/dsky.conf
+exec > >(tee -a "$LOG_FILE") 2>&1
+
+echo "Starting the launch process..."
+
+echo "Configuration file path: $CONFIG_FILE"
 
 if [ -f "$CONFIG_FILE" ]; then
     source "$CONFIG_FILE"
-    echo "Configuration loaded from $CONFIG_FILE"
+    echo "Configuration loaded: FREESKY_MODE=$FREESKY_MODE, FREESKY_DIR=$FREESKY_DIR"
 else
     echo "Configuration file $CONFIG_FILE not found. Exiting."
     exit 1

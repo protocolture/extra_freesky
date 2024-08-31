@@ -4,6 +4,7 @@ clone_dir="/opt/dsky"
 launch_script_path="/opt/dsky/launch/launch_script.sh"
 
 
+
 # Step 1: Pull the GitHub repository
 #Check dir exists. 
 if [ ! -d "$clone_dir" ]; then
@@ -19,6 +20,8 @@ echo "Cloning the repository into $clone_dir..."
 git clone $repo_url $clone_dir
 
 chmod +x $launch_script_path
+sudo touch /var/log/dsky_launch.log
+sudo chmod 664 /var/log/dsky_launch.log
 
 
 # Erroor Checking
@@ -87,7 +90,6 @@ ExecStart='$launch_script_path'
 StandardOutput=journal
 StandardError=journal
 Restart=always
-User='$USER'cat
 WorkingDirectory='$HOME/repo'
 [Install]
 WantedBy=multi-user.target
