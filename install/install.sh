@@ -3,7 +3,18 @@ repo_url = C:\lindev\extra_freesky
 clone_dir=~/repo
 launch_script_path=~/repo/launch/launch_script.sh
 
+
 # Step 1: Pull the GitHub repository
+
+
+#Check dir exists. 
+if [ ! -d "$clone_dir" ]; then
+    echo "Directory $clone_dir does not exist. Creating it..."
+    mkdir -p "$clone_dir"
+else
+    echo "Directory $clone_dir already exists."
+fi
+
 echo "Cloning the repository into $clone_dir..."
 git clone "$repo_url" "$clone_dir"
 
