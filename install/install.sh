@@ -1,7 +1,7 @@
 #!/bin/bash
 repo_url="https://github.com/protocolture/extra_freesky"
-clone_dir="~/repo"
-launch_script_path="~/repo/launch/launch_script.sh"
+clone_dir="/opt/dsky"
+launch_script_path="/opt/dsky/launch/launch_script.sh"
 
 
 # Step 1: Pull the GitHub repository
@@ -57,6 +57,7 @@ esac
 
 echo "Setting environment variable EXTRA_FREESKY to $env_var_value"
 echo "export EXTRA_FREESKY=\"$env_var_value\"" >> ~/.bashrc
+echo "export EXTRA_FREESKY_PATH=\"$clone_dir\"" >> ~/.bashrc
 source ~/.bashrc
 
 # Step 3: Set the launch script to run at startup
