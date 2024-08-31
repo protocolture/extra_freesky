@@ -21,7 +21,6 @@ git clone $repo_url $clone_dir
 chmod +x $launch_script_path
 
 
-
 # Erroor Checking
 if [ $? -ne 0 ]; then
     echo "Error: Failed to clone repository. Please check the URL and your network connection. Exiting."
