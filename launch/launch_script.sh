@@ -7,6 +7,7 @@ git -C /opt/dsky pull
 echo "Launching Freesky..."
 
 # Map environment variables to specific scripts
+echo $EXTRA_FREESKY
 case $EXTRA_FREESKY in
     DRelay)
         script_to_run="/opt/dsky/dskyrelay/free-sky-relay-loop.py"
