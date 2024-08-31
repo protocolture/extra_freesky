@@ -1,5 +1,5 @@
 #!/bin/bash
-repo_url = C:\lindev\extra_freesky
+repo_url = 'https://github.com/protocolture/extra_freesky'
 clone_dir=~/repo
 launch_script_path=~/repo/launch/launch_script.sh
 
