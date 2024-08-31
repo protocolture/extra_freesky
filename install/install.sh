@@ -65,17 +65,17 @@ sudo bash -c 'cat <<EOF > /etc/dsky/dsky.conf
 # /etc/dsky/dsky.conf
 # Configuration for Freesky
 
-# Mode for Freesky: Selected during installation
-FREESKY_MODE=$FREESKY_MODE
+# Mode
+FREESKY_MODE='$FREESKY_MODE'
 
 # Directory for Freesky
 FREESKY_DIR=/opt/dsky/freesky
 EOF'
 
-echo "Configuration file /etc/dsky/dsky.conf created with mode $FREESKY_MODE."
+echo "Configuration file /etc/dsky/dsky.conf "
 
 # Step 3: Set the launch script to run at startup
-echo "Setting up launch script to run at startup..."
+echo "Setting launch script to run at startup..."
 
 # Create a systemd service file to run the launch script at startup
 sudo bash -c 'cat << EOF > /etc/systemd/system/freesky.service
