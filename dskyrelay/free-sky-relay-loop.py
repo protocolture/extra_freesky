@@ -5,13 +5,17 @@ import logging
 import threading
 
 
-#Curretly using Flask to run an unauthenticated HTTP Webserver
+#Curretly using Flask to listen for webhooks
 #Obviously never run this in any permanent or enterprise environment. 
 #Use at own risk.
+#TODO: 
+#1. Move to authenticated webserver
+#2. Require Pin command AND duration as separate values 
+#3. Battle Harden 
 
 app = Flask(__name__)
 
-# Set up logging
+# Set up logging - Possibility here to get more serious logging going, however the goal here was to create an easy way to check on HA components. 
 logging.basicConfig(filename='webhook.log', level=logging.DEBUG)
 
 # Set up the GPIO
@@ -22,6 +26,8 @@ GPIO.setup(13, GPIO.OUT, initial=GPIO.HIGH) # SC2
 GPIO.setup(16, GPIO.OUT, initial=GPIO.HIGH) # SC3
 GPIO.setup(19, GPIO.OUT, initial=GPIO.HIGH) # SC4
 
+
+#Can obviously clean these up at some stage. GOSMOKE is arbitrary. Balance between exposing pins directly and coming up with goofy code names. 
 pin_mapping = {
     "GOSMOKE": 5,
     "SC1": 6,
@@ -44,10 +50,11 @@ def webhook():
 
     try:
         for key, value in data.items():
+        #Check that the key value actually matches something we are interested in
             if key in pin_mapping and int(value) == 1:
                 pin = pin_mapping[key]
                 app.logger.debug(f'Activating {key} on pin {pin}')
-                duration = 5  # Hardcoded duration
+                duration = 5  # Hardcoded duration, requirement only for testing. 
                 threading.Thread(target=activate_pin, args=(pin, duration)).start()
 
         return jsonify({"message": "Success"}), 200
