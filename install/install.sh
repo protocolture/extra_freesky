@@ -5,8 +5,6 @@ launch_script_path="/opt/dsky/launch/launch_script.sh"
 
 
 # Step 1: Pull the GitHub repository
-
-
 #Check dir exists. 
 if [ ! -d "$clone_dir" ]; then
     echo "Directory $clone_dir does not exist. Creating it..."
