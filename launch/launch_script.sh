@@ -5,10 +5,6 @@ git -C /opt/dsky pull
 
 # Step 2: Launch a script based on the environment variable
 echo "Launching Freesky..."
-if [ -z $EXTRA_FREESKY ]; then
-    echo "Environment variable EXTRA_FREESKY is not set. Exiting."
-    exit 1
-fi
 
 # Map environment variables to specific scripts
 case $EXTRA_FREESKY in
