@@ -54,6 +54,7 @@ def webhook():
             if key in pin_mapping and int(value) == 1:
                 pin = pin_mapping[key]
                 app.logger.debug(f'Activating {key} on pin {pin}')
+                print(f'Activating {key} on pin {pin}')
                 duration = 5  # Hardcoded duration, requirement only for testing. 
                 threading.Thread(target=activate_pin, args=(pin, duration)).start()
 
