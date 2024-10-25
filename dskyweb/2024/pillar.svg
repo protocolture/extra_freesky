@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 190 1577" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect x="0.667" y="57.029" width="188.705" height="1516.92" style="fill:rgb(11,208,0);stroke:black;stroke-width:1.33px;"/>
+    <rect x="75.913" y="57.156" width="36.606" height="1518.9" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(26.6667,0,0,26.6667,194.593,35.1939)">
+    </g>
+    <text x="-10.433px" y="35.194px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:26.667px;fill:rgb(0,230,2);">CENTRAL PILLAR</text>
+    <rect x="1.245" y="1518.71" width="187.332" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,146.204,1552.5)">
+    </g>
+    <text x="39.087px" y="1552.5px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">ESCAPE PODS</text>
+    <rect x="1.586" y="1305.81" width="186.433" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,173.003,1339.59)">
+    </g>
+    <text x="21.003px" y="1339.59px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">THRUSTER CONTROL</text>
+    <rect x="1.586" y="1077.02" width="186.433" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,175.955,1110.8)">
+    </g>
+    <text x="13.838px" y="1110.8px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">POWER GENERATION</text>
+    <rect x="-10.125" y="875.88" width="208.416" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,187.948,909.021)">
+    </g>
+    <text x="-0.037px" y="909.021px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">A - CENTRAL ACCESS - A</text>
+    <rect x="1.927" y="671.162" width="186.433" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,169.713,704.945)">
+    </g>
+    <text x="14.862px" y="704.945px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">COMMAND CENTER</text>
+    <rect x="0.903" y="473.95" width="187.461" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,171.024,506.368)">
+    </g>
+    <text x="23.392px" y="506.368px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">GRAVITY CONTROL</text>
+    <rect x="1.245" y="209.693" width="187.974" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,153.547,243.476)">
+    </g>
+    <text x="39.087px" y="243.476px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">AI MAINFRAME</text>
+    <rect x="0.12" y="56.667" width="188.68" height="57.276" style="stroke:black;stroke-width:1.33px;"/>
+    <g transform="matrix(16,0,0,16,147.339,90.4492)">
+    </g>
+    <text x="38.745px" y="90.449px" style="font-family:'CenturyGothic', 'Century Gothic';font-size:16px;fill:rgb(0,230,2);">OBSERVATION</text>
+</svg>

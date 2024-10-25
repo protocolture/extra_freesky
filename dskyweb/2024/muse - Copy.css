@@ -1,0 +1,129 @@
+:root {
+    --crt-red: rgb(218, 49, 49);
+    --crt-green: rgb(112, 159, 115);
+    --crt-blue: rgb(40, 129, 206);
+}
+
+/* Global */
+html {
+    font-size: 1.5rem;
+    font-family: "Courier New", monospace;
+    min-height: 100%;
+}
+
+main {
+    height: 100vh;
+    height: 100dvh;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.crt {
+    background-color: rgb(25, 25, 30);
+    text-shadow: 0 0 0.2em currentColor, 1px 1px rgba(255, 0, 255, 0.5), -1px -1px rgba(0, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Smooth, non-repeating background gradient with scanlines */
+.crt:before, .crt:after {
+    content: "";
+    transform: translateZ(0);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.crt:before {
+    background: repeating-linear-gradient(
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    opacity: 0.2;
+}
+
+.crt:after {
+    background: repeating-linear-gradient(90deg, var(--crt-red), var(--crt-green), var(--crt-blue));
+    background-size: 100% 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: rgb(41, 255, 64); /* Default green color */
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.svg-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.temperature-display {
+    text-align: left;
+    font-size: 1.5em;
+    color: rgb(41, 255, 64); /* Default green */
+}
+
+.crt, h1, h2, .temperature-display, .label {
+    animation: flicker 0.15s infinite alternate;
+}
+
+h1 {
+    color: rgb(41, 255, 64);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: rgb(255, 165, 0); /* Orange for the sun */
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+/* Styling for labels, now embedded in the SVG */
+.svg-label {
+    fill: rgb(41, 255, 64);
+    font-size: 60px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+#edge1, #edge2, #edge3, #arm1, #arm2, #arm3, #core {
+    fill: rgb(41, 255, 64); /* Default green for all elements */
+    stroke: black;
+    stroke-width: 4px;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
